@@ -3,11 +3,16 @@
 const doorToDoor = (volunteers, neighbourhoods) =>
   neighbourhoods.length / volunteers.length;
 
+// Day 2: Return the appropriate response based on the topic asked.
+const interviewAnswer = topic => {
+  // Code here!
+  // Remember to return a value!
+};
+
 // Inputs provided:
 // Day #1
 const volunteers = ['Sally', 'Jake', 'Brian', 'Hamid'];
 
-// Day #1
 const neighbourhoods = [
   'Central Valley',
   'Big Mountain',
