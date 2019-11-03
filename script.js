@@ -21,11 +21,23 @@ const interviewAnswer = topic => {
   }
 };
 
-// Day #3:
-// Remember, the possible candidates are: Tim, Sally, and Beth (in that order)
+// Day #3: Return an array of updated votes based on the name of the selected candidate.
 const castVote = (name, votes) => {
-  // Code here!
-  // Remember to return a value!
+  switch (name) {
+    case 'Tim': {
+      votes[0]++;
+      break;
+    }
+    case 'Sally': {
+      votes[1]++;
+      break;
+    }
+    case 'Beth': {
+      votes[2]++;
+      break;
+    }
+  }
+  return votes;
 };
 
 // Inputs provided:
@@ -49,6 +61,15 @@ const input2 = 'economy';
 const input3 = 'transportation';
 const input4 = 'infidelity';
 
+// Day 3
+const name = 'Sally';
+const name2 = 'Tim';
+const name3 = 'Beth';
+
+const votes = [0, 2, 1];
+const votes2 = [1, 1, 2];
+const votes3 = [5, 2, 2];
+
 // Calling functions:
 // Day #1
 doorToDoor(volunteers, neighbourhoods);
@@ -58,3 +79,8 @@ interviewAnswer(input);
 interviewAnswer(input2);
 interviewAnswer(input3);
 interviewAnswer(input4);
+
+// Day #3
+castVote(name, [0, 2, 1]);
+castVote(name2, [1, 1, 2]);
+castVote(name3, [5, 2, 2]);
