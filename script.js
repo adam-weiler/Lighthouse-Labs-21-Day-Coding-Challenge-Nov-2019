@@ -21,6 +21,13 @@ const interviewAnswer = topic => {
   }
 };
 
+// Day #3:
+// Remember, the possible candidates are: Tim, Sally, and Beth (in that order)
+const castVote = (name, votes) => {
+  // Code here!
+  // Remember to return a value!
+};
+
 // Inputs provided:
 // Day #1
 const volunteers = ['Sally', 'Jake', 'Brian', 'Hamid'];
