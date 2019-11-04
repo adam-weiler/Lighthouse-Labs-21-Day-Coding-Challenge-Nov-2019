@@ -40,6 +40,12 @@ const castVote = (name, votes) => {
   return votes;
 };
 
+// Day #4: Return an array of updated unregisteredVoters by removing the name of the person voting.
+const registerToVote = (name, unregisteredVoters) => {
+  // Code here!
+  // Remember to return a value!
+};
+
 // Inputs provided:
 // Day #1
 const volunteers = ['Sally', 'Jake', 'Brian', 'Hamid'];
