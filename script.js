@@ -44,12 +44,14 @@ const castVote = (candidate, votes) => {
 const registerToVote = (voter, unregisteredVoters) =>
   unregisteredVoters.filter(n => n !== voter);
 
-// Day #5:
-const chooseStations = stations => {
-  // Code here!
-  // Remember to return a value!
-};
+// Day #5: Return an array of stations where capacity is at least 20, and venue is a school or community centre.
+const chooseStations = stations =>
+  stations
+    .filter(s => s[1] >= 20 && (s[2] == 'school' || s[2] == 'community centre'))
+    .map(s => s[0]);
 
+//
+//
 // Inputs provided:
 // Day #1
 const volunteers = ['Sally', 'Jake', 'Brian', 'Hamid'];
@@ -91,6 +93,15 @@ const unregisteredVoters = ['Jake', 'Alanna', 'Bradley', 'Stephanie'];
 const unregisteredVoters2 = ['Jimmy', 'Suzie', 'Bobby'];
 const unregisteredVoters3 = ['Tomasa', 'Tennille', 'Tayna', 'Eufemia', 'Floyd'];
 
+// Day 5
+const stations = [
+  ['Big Bear Donair', 10, 'restaurant'],
+  ['Bright Lights Elementary', 50, 'school'],
+  ['Moose Mountain Community Centre', 45, 'community centre']
+];
+
+//
+//
 // Calling functions:
 // Day #1
 doorToDoor(volunteers, neighbourhoods); // 2
@@ -111,3 +122,6 @@ castVote(candidate3, [5, 2, 2]); // [5, 2, 3]
 registerToVote(voter, unregisteredVoters); // ['Jake', 'Alanna', 'Stephanie']
 registerToVote(voter2, unregisteredVoters2); // ['Jimmy', 'Suzie']
 registerToVote(voter3, unregisteredVoters3); // ['Tomasa', 'Tennille', 'Tayna', 'Eufemia']
+
+// Day #5
+chooseStations(stations); // [['Bright Lights Elementary', 50, 'school'], ['Moose Mountain Community Centre', 45, 'community centre']]
