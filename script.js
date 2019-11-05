@@ -44,6 +44,12 @@ const castVote = (candidate, votes) => {
 const registerToVote = (voter, unregisteredVoters) =>
   unregisteredVoters.filter(n => n !== voter);
 
+// Day #5:
+const chooseStations = stations => {
+  // Code here!
+  // Remember to return a value!
+};
+
 // Inputs provided:
 // Day #1
 const volunteers = ['Sally', 'Jake', 'Brian', 'Hamid'];
