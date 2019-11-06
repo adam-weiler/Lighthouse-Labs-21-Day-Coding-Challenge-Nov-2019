@@ -50,6 +50,11 @@ const chooseStations = stations =>
     .filter(s => s[1] >= 20 && (s[2] == 'school' || s[2] == 'community centre'))
     .map(s => s[0]);
 
+// Day #6:
+const voterTurnout = (voter_signatures, voter_ids) => {
+  // Code here!
+};
+
 //
 //
 // Inputs provided:
