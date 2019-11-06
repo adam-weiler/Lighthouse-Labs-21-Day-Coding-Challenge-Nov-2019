@@ -58,11 +58,7 @@ const voterTurnout = (voter_signatures, voter_ids) => {
 
   let isSame = voter_signatures.every((n, i) => n === voter_ids[i]);
 
-  if (isSame) {
-    return 'All clear, we can count the votes!';
-  } else {
-    return 'FRAUD!';
-  }
+  return isSame ? 'All clear, we can count the votes!' : 'FRAUD!';
 };
 
 //
