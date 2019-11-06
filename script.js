@@ -52,7 +52,17 @@ const chooseStations = stations =>
 
 // Day #6:
 const voterTurnout = (voter_signatures, voter_ids) => {
-  // Code here!
+  if (voter_signatures.length != voter_ids.length) {
+    return false;
+  }
+
+  let isSame = voter_signatures.every((n, i) => n === voter_ids[i]);
+
+  if (isSame) {
+    return 'All clear, we can count the votes!';
+  } else {
+    return 'FRAUD!';
+  }
 };
 
 //
@@ -105,6 +115,50 @@ const stations = [
   ['Moose Mountain Community Centre', 45, 'community centre']
 ];
 
+// Day 6
+const voter_signatures = [
+  'Bill Billiamson',
+  'Kate Etak',
+  'Brandon Brandonus',
+  'Fake McFakerson',
+  'Jane Janesford'
+];
+const voter_signatures2 = [
+  'Bill Billiamson',
+  'Kate Etak',
+  'Brandon Brandonus',
+  'Simon Simonson',
+  'Jane Janesford'
+];
+const voter_signatures3 = [
+  'Bill Billiamson',
+  'Kate Etak',
+  'Brandon Brandonus',
+  'Simon Simonson',
+  'Jane Janesford'
+];
+
+const voter_ids = [
+  'Bill Billiamson',
+  'Kate Etak',
+  'Brandon Brandonus',
+  'Simon Simonson',
+  'Jane Janesford'
+];
+const voter_ids2 = [
+  'Bill Billiamson',
+  'Kate Etak',
+  'Brandon Brandonus',
+  'Simon Simonson',
+  'Jane Janesford'
+];
+const voter_id3 = [
+  'Bill Billiamson',
+  'Kate Etak',
+  'Simon Simonson',
+  'Brandon Brandonus'
+];
+
 //
 //
 // Calling functions:
@@ -130,3 +184,8 @@ registerToVote(voter3, unregisteredVoters3); // ['Tomasa', 'Tennille', 'Tayna', 
 
 // Day #5
 chooseStations(stations); // [['Bright Lights Elementary', 50, 'school'], ['Moose Mountain Community Centre', 45, 'community centre']]
+
+// Day #6
+voterTurnout(voter_signatures, voter_ids); // 'FRAUD!'
+voterTurnout(voter_signatures2, voter_ids2); // 'All clear, we can count the votes!'
+voterTurnout(voter_signatures3, voter_ids3); // false
