@@ -62,10 +62,11 @@ const voterTurnout = (voter_signatures, voter_ids) => {
 };
 
 // Day #7:
-const termTopics = interviews => {
-  // Code here!
-  // Remember to return an array!
-};
+const termTopics = interviews => [
+  interviews.filter(t => t == 'smart city').length,
+  interviews.filter(t => t == 'arts funding').length,
+  interviews.filter(t => t == 'transportation').length
+];
 
 //
 //
@@ -92,7 +93,7 @@ const input2 = 'economy';
 const input3 = 'transportation';
 const input4 = 'infidelity';
 
-// Day 3
+// Day #3
 const candidate = 'Sally';
 const candidate2 = 'Tim';
 const candidate3 = 'Beth';
@@ -101,7 +102,7 @@ const votes = [0, 2, 1];
 const votes2 = [1, 1, 2];
 const votes3 = [5, 2, 2];
 
-// Day 4
+// Day #4
 const voter = 'Bradley';
 const voter2 = 'Bobby';
 const voter3 = 'Floyd';
@@ -110,14 +111,14 @@ const unregisteredVoters = ['Jake', 'Alanna', 'Bradley', 'Stephanie'];
 const unregisteredVoters2 = ['Jimmy', 'Suzie', 'Bobby'];
 const unregisteredVoters3 = ['Tomasa', 'Tennille', 'Tayna', 'Eufemia', 'Floyd'];
 
-// Day 5
+// Day #5
 const stations = [
   ['Big Bear Donair', 10, 'restaurant'],
   ['Bright Lights Elementary', 50, 'school'],
   ['Moose Mountain Community Centre', 45, 'community centre']
 ];
 
-// Day 6
+// Day #6
 const voter_signatures = [
   'Bill Billiamson',
   'Kate Etak',
@@ -161,6 +162,21 @@ const voter_id3 = [
   'Brandon Brandonus'
 ];
 
+// Day #7
+const interviews = [
+  'smart city',
+  'rebuild the lighthouse',
+  'arts funding',
+  'transportation',
+  'arts funding',
+  'rebuild the lighthouse',
+  'sports funding',
+  'tax cuts',
+  'smart city',
+  'arts funding',
+  'smart city'
+];
+
 //
 //
 // Calling functions:
@@ -191,3 +207,6 @@ chooseStations(stations); // [['Bright Lights Elementary', 50, 'school'], ['Moos
 voterTurnout(voter_signatures, voter_ids); // 'FRAUD!'
 voterTurnout(voter_signatures2, voter_ids2); // 'All clear, we can count the votes!'
 voterTurnout(voter_signatures3, voter_ids3); // false
+
+// Day #7
+termTopics(interviews); // [3,1,1]
