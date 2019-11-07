@@ -61,6 +61,12 @@ const voterTurnout = (voter_signatures, voter_ids) => {
   return isSame ? 'All clear, we can count the votes!' : 'FRAUD!';
 };
 
+// Day #7:
+const termTopics = interviews => {
+  // Code here!
+  // Remember to return an array!
+};
+
 //
 //
 // Inputs provided:
