@@ -68,6 +68,11 @@ const termTopics = interviews => [
   interviews.filter(t => t == 'transportation').length
 ];
 
+// Day #8:
+const smartGarbage = (trash, bins) => {
+  // Code here!
+};
+
 //
 //
 // Inputs provided:
