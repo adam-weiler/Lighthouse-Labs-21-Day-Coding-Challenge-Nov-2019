@@ -68,9 +68,10 @@ const termTopics = interviews => [
   interviews.filter(t => t == 'transportation').length
 ];
 
-// Day #8:
+// Day #8: Return an object containing the correct number of items in each bin (waste, recyling, compost).
 const smartGarbage = (trash, bins) => {
-  // Code here!
+  bins[trash] += 1;
+  return bins;
 };
 
 //
@@ -182,6 +183,14 @@ const interviews = [
   'smart city'
 ];
 
+// Day 8
+const trash = 'recycling';
+const trash2 = 'waste';
+const trash3 = 'compost';
+const bins = { waste: 4, recycling: 2, compost: 5 };
+const bins2 = { waste: 2, recycling: 4, compost: 10 };
+const bins3 = { waste: 2, recycling: 2, compost: 3 };
+
 //
 //
 // Calling functions:
@@ -215,3 +224,8 @@ voterTurnout(voter_signatures3, voter_ids3); // false
 
 // Day #7
 termTopics(interviews); // [3,1,1]
+
+// Day #8
+smartGarbage(trash, bins); // { waste: 4, recycling: 3, compost: 5 }
+smartGarbage(trash2, bins2); // { waste: 3, recycling: 4, compost: 10 }
+smartGarbage(trash3, bins3); // { waste: 2, recycling: 2, compost: 4 }
