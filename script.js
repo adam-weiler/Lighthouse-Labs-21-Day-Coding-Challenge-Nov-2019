@@ -50,38 +50,37 @@ const chooseStations = stations =>
     .filter(s => s[1] >= 20 && (s[2] == 'school' || s[2] == 'community centre'))
     .map(s => s[0]);
 
-// Day #6:
+// Day #6: Compares voter signatures to voter ids and returns a message.
 const voterTurnout = (voter_signatures, voter_ids) => {
+  // If there are not the same number of signatures to ids.
   if (voter_signatures.length != voter_ids.length) {
     return false;
   }
 
   let isSame = voter_signatures.every((n, i) => n === voter_ids[i]);
 
-  return isSame ? 'All clear, we can count the votes!' : 'FRAUD!';
+  return isSame ? 'All clear, we can count the votes!' : 'FRAUD!'; // If signatures and ids are the same, it's good. Otherwise there is fraud.
 };
 
-// Day #7:
+// Day #7: Return an array that counts how many times each topic was mentioned in surveys (smart city, arts funding, transportation).
 const termTopics = interviews => [
   interviews.filter(t => t == 'smart city').length,
   interviews.filter(t => t == 'arts funding').length,
   interviews.filter(t => t == 'transportation').length
 ];
 
-// Day #8: Return an object containing the correct number of items in each bin (waste, recyling, compost).
+// Day #8: Return an object containing the updated number of items in each bin (waste, recyling, compost).
 const smartGarbage = (trash, bins) => {
   bins[trash] += 1;
   return bins;
 };
 
-// Day #9:
-const carPassing = (cars, speed) => {
-  // Code here!
-};
+// Day #9: Return an object containing the updated time recorded and speed of each car passing the sensor.
+const carPassing = (cars, speed) => [...cars, { time: Date.now(), speed }];
 
 //
 //
-// Inputs provided:
+// ***Inputs provided***:
 // Day #1
 const volunteers = ['Sally', 'Jake', 'Brian', 'Hamid'];
 const volunteers2 = ['Sally', 'Jake', 'Brian'];
@@ -206,7 +205,7 @@ const speed = 38;
 
 //
 //
-// Calling functions:
+// ***Calling functions***:
 // Day #1
 doorToDoor(volunteers, neighbourhoods); // 2
 doorToDoor(volunteers2, neighbourhoods2); // 1
@@ -242,3 +241,6 @@ termTopics(interviews); // [3,1,1]
 smartGarbage(trash, bins); // { waste: 4, recycling: 3, compost: 5 }
 smartGarbage(trash2, bins2); // { waste: 3, recycling: 4, compost: 10 }
 smartGarbage(trash3, bins3); // { waste: 2, recycling: 2, compost: 4 }
+
+// Day #9
+carPassing(cars, speed); // Something like [ { time: 1568329654807, speed: 40 }, { time: 1568329821632, speed: 42 }, { time: 1568331115463, speed: 35 }, { time: 1568431216417, speed: 38 } ];
