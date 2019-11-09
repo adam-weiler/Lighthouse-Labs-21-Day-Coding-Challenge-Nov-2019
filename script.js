@@ -74,6 +74,11 @@ const smartGarbage = (trash, bins) => {
   return bins;
 };
 
+// Day #9:
+const carPassing = (cars, speed) => {
+  // Code here!
+};
+
 //
 //
 // Inputs provided:
@@ -190,6 +195,14 @@ const trash3 = 'compost';
 const bins = { waste: 4, recycling: 2, compost: 5 };
 const bins2 = { waste: 2, recycling: 4, compost: 10 };
 const bins3 = { waste: 2, recycling: 2, compost: 3 };
+
+// Day 9
+const cars = [
+  { time: 1568329654807, speed: 40 },
+  { time: 1568329821632, speed: 42 },
+  { time: 1568331115463, speed: 35 }
+];
+const speed = 38;
 
 //
 //
