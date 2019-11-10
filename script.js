@@ -78,6 +78,11 @@ const smartGarbage = (trash, bins) => {
 // Day #9: Return an object containing the updated time recorded and speed of each car passing the sensor.
 const carPassing = (cars, speed) => [...cars, { time: Date.now(), speed }];
 
+// Day #10:
+const whereCanIPark = (spots, vehicle) => {
+  // Code here!
+};
+
 //
 //
 // ***Inputs provided***:
@@ -191,6 +196,7 @@ const interviews = [
 const trash = 'recycling';
 const trash2 = 'waste';
 const trash3 = 'compost';
+
 const bins = { waste: 4, recycling: 2, compost: 5 };
 const bins2 = { waste: 2, recycling: 4, compost: 10 };
 const bins3 = { waste: 2, recycling: 2, compost: 3 };
@@ -201,7 +207,22 @@ const cars = [
   { time: 1568329821632, speed: 42 },
   { time: 1568331115463, speed: 35 }
 ];
+
 const speed = 38;
+
+// Day 10
+const spots = [
+  //COLUMNS ARE X
+  //0    1    2    3    4    5
+  ['s', 's', 's', 'S', 'R', 'M'], // 0 ROWS ARE Y
+  ['s', 'M', 's', 'S', 'R', 'M'], // 1
+  ['s', 'M', 's', 'S', 'R', 'm'], // 2
+  ['S', 'r', 's', 'm', 'R', 'M'], // 3
+  ['S', 'r', 's', 'm', 'R', 'M'], // 4
+  ['S', 'r', 'S', 'M', 'M', 'S'] //  5
+];
+
+const vehicle = 'regular'; // possible options are 'regular', 'small', or 'motorcycle'
 
 //
 //
@@ -244,3 +265,6 @@ smartGarbage(trash3, bins3); // { waste: 2, recycling: 2, compost: 4 }
 
 // Day #9
 carPassing(cars, speed); // Something like [ { time: 1568329654807, speed: 40 }, { time: 1568329821632, speed: 42 }, { time: 1568331115463, speed: 35 }, { time: 1568431216417, speed: 38 } ];
+
+// Day #10
+whereCanIPark(spots, vehicle);
