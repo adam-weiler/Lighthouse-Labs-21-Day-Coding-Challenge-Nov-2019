@@ -78,9 +78,19 @@ const smartGarbage = (trash, bins) => {
 // Day #9: Return an object containing the updated time recorded and speed of each car passing the sensor.
 const carPassing = (cars, speed) => [...cars, { time: Date.now(), speed }];
 
-// Day #10:
+// Day #10: Return an array index where vehicle can park if a spot is available.
 const whereCanIPark = (spots, vehicle) => {
-  // Code here!
+  let options = { regular: 'R', small: 'RS', motorcycle: 'RSM' };
+  let answer = false;
+
+  spots.some((n, i) => {
+    n.some((m, j) => {
+      if (options[vehicle].includes(spots[i][j])) {
+        answer = [i, j];
+      }
+    });
+  });
+  return answer;
 };
 
 //
