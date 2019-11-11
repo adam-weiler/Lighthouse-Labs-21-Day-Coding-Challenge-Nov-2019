@@ -93,9 +93,13 @@ const whereCanIPark = (spots, vehicle) => {
   return answer;
 };
 
-// Day #11:
+// Day #11: Return an object that calculates how long until a bus arrives at each stop.
 const busTimes = buses => {
-  // Code here!
+  for (let [k] of Object.entries(buses)) {
+    buses[k] = buses[k].distance / buses[k].speed;
+  }
+
+  return buses;
 };
 
 //
@@ -294,7 +298,7 @@ smartGarbage(trash3, bins3); // { waste: 2, recycling: 2, compost: 4 }
 carPassing(cars, speed); // Something like [ { time: 1568329654807, speed: 40 }, { time: 1568329821632, speed: 42 }, { time: 1568331115463, speed: 35 }, { time: 1568431216417, speed: 38 } ];
 
 // Day #10
-whereCanIPark(spots, vehicle);
+whereCanIPark(spots, vehicle); // Something like [4, 0]
 
 // Day #11
-busTimes(buses);
+busTimes(buses); // { pickadilly: 2, uptown: 1.3 }
