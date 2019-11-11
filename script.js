@@ -93,6 +93,11 @@ const whereCanIPark = (spots, vehicle) => {
   return answer;
 };
 
+// Day #11:
+const busTimes = buses => {
+  // Code here!
+};
+
 //
 //
 // ***Inputs provided***:
@@ -234,6 +239,18 @@ const spots = [
 
 const vehicle = 'regular'; // possible options are 'regular', 'small', or 'motorcycle'
 
+// Day 11
+const buses = {
+  pickadilly: {
+    distance: 10,
+    speed: 5
+  },
+  uptown: {
+    distance: 13,
+    speed: 10
+  }
+};
+
 //
 //
 // ***Calling functions***:
@@ -278,3 +295,6 @@ carPassing(cars, speed); // Something like [ { time: 1568329654807, speed: 40 },
 
 // Day #10
 whereCanIPark(spots, vehicle);
+
+// Day #11
+busTimes(buses);
