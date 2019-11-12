@@ -102,6 +102,11 @@ const busTimes = buses => {
   return buses;
 };
 
+// Day #12:
+const checkAir = function(samples, threshold) {
+  // Code here!
+};
+
 //
 //
 // ***Inputs provided***:
@@ -255,6 +260,24 @@ const buses = {
   }
 };
 
+// Day 12
+const samples = [
+  'clean',
+  'clean',
+  'dirty',
+  'clean',
+  'dirty',
+  'clean',
+  'clean',
+  'dirty',
+  'clean',
+  'dirty'
+];
+const samples2 = ['clean', 'clean', 'clean', 'clean', 'clean'];
+
+const threshold = 0.3;
+const threshold2 = 0.5;
+
 //
 //
 // ***Calling functions***:
@@ -302,3 +325,7 @@ whereCanIPark(spots, vehicle); // Something like [4, 0]
 
 // Day #11
 busTimes(buses); // { pickadilly: 2, uptown: 1.3 }
+
+// Day #12
+checkAir(samples, threshold);
+checkAir(samples2, threshold2);
