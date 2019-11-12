@@ -102,9 +102,10 @@ const busTimes = buses => {
   return buses;
 };
 
-// Day #12:
+// Day #12: Return a string that calculates if the pollution in the samples exceeds the air quality threshold.
 const checkAir = function(samples, threshold) {
-  // Code here!
+  dirty = samples.filter(v => v === 'dirty').length;
+  return dirty / samples.length > threshold ? 'Polluted' : 'Clean';
 };
 
 //
@@ -274,9 +275,21 @@ const samples = [
   'dirty'
 ];
 const samples2 = ['clean', 'clean', 'clean', 'clean', 'clean'];
+const samples3 = [
+  'dirty',
+  'clean',
+  'clean',
+  'dirty',
+  'clean',
+  'clean',
+  'clean'
+];
+const samples4 = ['dirty', 'clean', 'dirty', 'clean', 'clean', 'clean'];
 
 const threshold = 0.3;
 const threshold2 = 0.5;
+const threshold3 = 0.1;
+const threshold3 = 0.4;
 
 //
 //
@@ -327,5 +340,7 @@ whereCanIPark(spots, vehicle); // Something like [4, 0]
 busTimes(buses); // { pickadilly: 2, uptown: 1.3 }
 
 // Day #12
-checkAir(samples, threshold);
-checkAir(samples2, threshold2);
+checkAir(samples, threshold); // 'Clean'
+checkAir(samples2, threshold2); // 'Clean'
+checkAir(samples3, threshold3); // 'Polluted'
+checkAir(samples4, threshold4); // 'Clean'
