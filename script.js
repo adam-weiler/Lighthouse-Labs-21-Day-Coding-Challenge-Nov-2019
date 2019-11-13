@@ -109,18 +109,22 @@ const checkAir = function(samples, threshold) {
 };
 
 // Day #13:
-// Tip: Work on one of these functions at a time.
-
 const lightsOn = function(lights) {
-  // Code here!
+  // console.log('lightson', lights)
+    for (let [i, v] of Object.entries(lights)) {
+      // console.log(lights[i]['on'])
+      lights[i].on = true;
+      console.log(i, v.on);
+    }
+    return lights;
 };
 
 const lightsOff = function(lights) {
-  // Code here!
+  // console.log('lightsoff', lights)
 };
 
 const toggleLights = function(lights, lightsAreOn) {
-  // Code here!
+  // console.log('toggleLights', lights, lightsAreOn)
 };
 
 //
@@ -306,6 +310,12 @@ const threshold2 = 0.5;
 const threshold3 = 0.1;
 const threshold3 = 0.4;
 
+// Day 13
+const lights = {"id":1,"on":false},{"id":2,"on":false},{"id":3,"on":false},{"id":4,"on":false},{"id":5,"on":false};
+const lights2 = {"id":1,"on":true},{"id":2,"on":true},{"id":3,"on":true},{"id":4,"on":true},{"id":5,"on":true};
+
+const lightsAreOn = true;
+
 //
 //
 // ***Calling functions***:
@@ -359,3 +369,8 @@ checkAir(samples, threshold); // 'Clean'
 checkAir(samples2, threshold2); // 'Clean'
 checkAir(samples3, threshold3); // 'Polluted'
 checkAir(samples4, threshold4); // 'Clean'
+
+// Day #13
+lightsOn(lights); // {"id":1,"on":true},{"id":2,"on":true},{"id":3,"on":true},{"id":4,"on":true},{"id":5,"on":true}
+lightsOff(lights2); // {"id":1,"on":false},{"id":2,"on":false},{"id":3,"on":false},{"id":4,"on":false},{"id":5,"on":false}
+toggleLights(lights, lightsAreOn);
