@@ -111,28 +111,31 @@ const busTimes = buses => {
 
 // Day #12: Return a string that calculates if the pollution in the samples
 // exceeds the air quality threshold.
-const checkAir = function(samples, threshold) {
+const checkAir = (samples, threshold) => {
   const dirty = samples.filter(v => v === 'dirty').length;
   return dirty / samples.length > threshold ? 'Polluted' : 'Clean';
 };
 
 // Day #13:
-const lightsOn = function(lights) {
+// Return an array with all the lights turned on.
+const lightsOn = lights => {
   for (let [i, v] of Object.entries(lights)) {
     lights[i].on = true;
   }
   return lights;
 };
 
-const lightsOff = function(lights) {
+// Return an array with all the lights turned off.
+const lightsOff = lights => {
   for (let [i, v] of Object.entries(lights)) {
     lights[i].on = false;
   }
   return lights;
 };
 
-const toggleLights = function(lights, lightsAreOn) {
-  // console.log('toggleLights', lights, lightsAreOn)
+// Return an array that turns lights off or on based on lightsAreOn.
+const toggleLights = (lights, lightsAreOn) => {
+  return lightsAreOn ? lightsOff(lights) : lightsOn(lights);
 };
 
 //
@@ -335,6 +338,7 @@ const lights2 = [
 ];
 
 const lightsAreOn = true;
+const lightsAreOn2 = false;
 
 //
 //
@@ -393,4 +397,5 @@ checkAir(samples4, threshold4); // 'Clean'
 // Day #13
 lightsOn(lights); // {"id":1,"on":true},{"id":2,"on":true},{"id":3,"on":true},{"id":4,"on":true},{"id":5,"on":true}
 lightsOff(lights2); // {"id":1,"on":false},{"id":2,"on":false},{"id":3,"on":false},{"id":4,"on":false},{"id":5,"on":false}
-toggleLights(lights, lightsAreOn);
+toggleLights(lights, lightsAreOn); // {"id":1,"on":false},{"id":2,"on":false},{"id":3,"on":false},{"id":4,"on":false},{"id":5,"on":false}
+toggleLights(lights2, lightsAreOn2); // {"id":1,"on":false},{"id":2,"on":false},{"id":3,"on":false},{"id":4,"on":false},{"id":5,"on":false}
