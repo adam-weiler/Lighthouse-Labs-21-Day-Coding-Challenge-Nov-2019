@@ -6,17 +6,17 @@ const doorToDoor = (volunteers, neighbourhoods) =>
 // Day 2: Return the appropriate response based on the topic asked.
 const interviewAnswer = topic => {
   switch (topic) {
-    case "arts funding": {
+    case 'arts funding': {
       return "We'll have to get creative!";
     }
-    case "economy": {
-      return "Time is money.";
+    case 'economy': {
+      return 'Time is money.';
     }
-    case "transportation": {
+    case 'transportation': {
       return "It's going to be a long road, so we better get moving.";
     }
     default: {
-      return "QUACK";
+      return 'QUACK';
     }
   }
 };
@@ -24,16 +24,16 @@ const interviewAnswer = topic => {
 // Day #3: Return an array of updated votes based on the name of the selected candidate.
 const castVote = (candidate, votes) => {
   switch (candidate) {
-    case "Tim": {
-      votes[0]++;
+    case 'Tim': {
+      votes[0] += 1;
       break;
     }
-    case "Sally": {
-      votes[1]++;
+    case 'Sally': {
+      votes[1] += 1;
       break;
     }
-    case "Beth": {
-      votes[2]++;
+    case 'Beth': {
+      votes[2] += 1;
       break;
     }
   }
@@ -44,43 +44,50 @@ const castVote = (candidate, votes) => {
 const registerToVote = (voter, unregisteredVoters) =>
   unregisteredVoters.filter(n => n !== voter);
 
-// Day #5: Return an array of stations where capacity is at least 20, and venue is a school or community centre.
+// Day #5: Return an array of stations where capacity is at least 20,
+// and venue is a school or community centre.
 const chooseStations = stations =>
   stations
-    .filter(s => s[1] >= 20 && (s[2] == "school" || s[2] == "community centre"))
+    .filter(
+      s => s[1] >= 20 && (s[2] === 'school' || s[2] === 'community centre')
+    )
     .map(s => s[0]);
 
 // Day #6: Compares voter signatures to voter ids and returns a message.
 const voterTurnout = (voter_signatures, voter_ids) => {
   // If there are not the same number of signatures to ids.
-  if (voter_signatures.length != voter_ids.length) {
+  if (voter_signatures.length !== voter_ids.length) {
     return false;
   }
 
   let isSame = voter_signatures.every((n, i) => n === voter_ids[i]);
 
-  return isSame ? "All clear, we can count the votes!" : "FRAUD!"; // If signatures and ids are the same, it's good. Otherwise there is fraud.
+  // If signatures and ids are the same, it's good. Otherwise there is fraud.
+  return isSame ? 'All clear, we can count the votes!' : 'FRAUD!';
 };
 
-// Day #7: Return an array that counts how many times each topic was mentioned in surveys (smart city, arts funding, transportation).
+// Day #7: Return an array that counts how many times each topic
+// was mentioned in surveys (smart city, arts funding, transportation).
 const termTopics = interviews => [
-  interviews.filter(t => t == "smart city").length,
-  interviews.filter(t => t == "arts funding").length,
-  interviews.filter(t => t == "transportation").length
+  interviews.filter(t => t === 'smart city').length,
+  interviews.filter(t => t === 'arts funding').length,
+  interviews.filter(t => t === 'transportation').length
 ];
 
-// Day #8: Return an object containing the updated number of items in each bin (waste, recyling, compost).
+// Day #8: Return an object containing the updated number of items
+// in each bin (waste, recyling, compost).
 const smartGarbage = (trash, bins) => {
   bins[trash] += 1;
   return bins;
 };
 
-// Day #9: Return an object containing the updated time recorded and speed of each car passing the sensor.
+// Day #9: Return an object containing the updated time recorded and speed
+// of each car passing the sensor.
 const carPassing = (cars, speed) => [...cars, { time: Date.now(), speed }];
 
 // Day #10: Return an array index where vehicle can park if a spot is available.
 const whereCanIPark = (spots, vehicle) => {
-  let options = { regular: "R", small: "RS", motorcycle: "RSM" };
+  let options = { regular: 'R', small: 'RS', motorcycle: 'RSM' };
   let answer = false;
 
   spots.some((n, i) => {
@@ -102,25 +109,26 @@ const busTimes = buses => {
   return buses;
 };
 
-// Day #12: Return a string that calculates if the pollution in the samples exceeds the air quality threshold.
+// Day #12: Return a string that calculates if the pollution in the samples
+// exceeds the air quality threshold.
 const checkAir = function(samples, threshold) {
-  dirty = samples.filter(v => v === "dirty").length;
-  return dirty / samples.length > threshold ? "Polluted" : "Clean";
+  const dirty = samples.filter(v => v === 'dirty').length;
+  return dirty / samples.length > threshold ? 'Polluted' : 'Clean';
 };
 
 // Day #13:
 const lightsOn = function(lights) {
-  // console.log('lightson', lights)
-    for (let [i, v] of Object.entries(lights)) {
-      // console.log(lights[i]['on'])
-      lights[i].on = true;
-      console.log(i, v.on);
-    }
-    return lights;
+  for (let [i, v] of Object.entries(lights)) {
+    lights[i].on = true;
+  }
+  return lights;
 };
 
 const lightsOff = function(lights) {
-  // console.log('lightsoff', lights)
+  for (let [i, v] of Object.entries(lights)) {
+    lights[i].on = false;
+  }
+  return lights;
 };
 
 const toggleLights = function(lights, lightsAreOn) {
@@ -131,115 +139,115 @@ const toggleLights = function(lights, lightsAreOn) {
 //
 // ***Inputs provided***:
 // Day #1
-const volunteers = ["Sally", "Jake", "Brian", "Hamid"];
-const volunteers2 = ["Sally", "Jake", "Brian"];
+const volunteers = ['Sally', 'Jake', 'Brian', 'Hamid'];
+const volunteers2 = ['Sally', 'Jake', 'Brian'];
 
 const neighbourhoods = [
-  "Central Valley",
-  "Big Mountain",
-  "Little Bridge",
-  "Bricktown",
-  "Brownsville",
+  'Central Valley',
+  'Big Mountain',
+  'Little Bridge',
+  'Bricktown',
+  'Brownsville',
   "Paul's Boutique",
-  "Clay Park",
-  "Fox Nest"
+  'Clay Park',
+  'Fox Nest'
 ];
-const neighbourhoods2 = ["Central Valley", "Big Mountain", "Little Bridge"];
+const neighbourhoods2 = ['Central Valley', 'Big Mountain', 'Little Bridge'];
 
 // Day #2
-const input = "arts funding";
-const input2 = "economy";
-const input3 = "transportation";
-const input4 = "infidelity";
+const input = 'arts funding';
+const input2 = 'economy';
+const input3 = 'transportation';
+const input4 = 'infidelity';
 
 // Day #3
-const candidate = "Sally";
-const candidate2 = "Tim";
-const candidate3 = "Beth";
+const candidate = 'Sally';
+const candidate2 = 'Tim';
+const candidate3 = 'Beth';
 
 const votes = [0, 2, 1];
 const votes2 = [1, 1, 2];
 const votes3 = [5, 2, 2];
 
 // Day #4
-const voter = "Bradley";
-const voter2 = "Bobby";
-const voter3 = "Floyd";
+const voter = 'Bradley';
+const voter2 = 'Bobby';
+const voter3 = 'Floyd';
 
-const unregisteredVoters = ["Jake", "Alanna", "Bradley", "Stephanie"];
-const unregisteredVoters2 = ["Jimmy", "Suzie", "Bobby"];
-const unregisteredVoters3 = ["Tomasa", "Tennille", "Tayna", "Eufemia", "Floyd"];
+const unregisteredVoters = ['Jake', 'Alanna', 'Bradley', 'Stephanie'];
+const unregisteredVoters2 = ['Jimmy', 'Suzie', 'Bobby'];
+const unregisteredVoters3 = ['Tomasa', 'Tennille', 'Tayna', 'Eufemia', 'Floyd'];
 
 // Day #5
 const stations = [
-  ["Big Bear Donair", 10, "restaurant"],
-  ["Bright Lights Elementary", 50, "school"],
-  ["Moose Mountain Community Centre", 45, "community centre"]
+  ['Big Bear Donair', 10, 'restaurant'],
+  ['Bright Lights Elementary', 50, 'school'],
+  ['Moose Mountain Community Centre', 45, 'community centre']
 ];
 
 // Day #6
 const voter_signatures = [
-  "Bill Billiamson",
-  "Kate Etak",
-  "Brandon Brandonus",
-  "Fake McFakerson",
-  "Jane Janesford"
+  'Bill Billiamson',
+  'Kate Etak',
+  'Brandon Brandonus',
+  'Fake McFakerson',
+  'Jane Janesford'
 ];
 const voter_signatures2 = [
-  "Bill Billiamson",
-  "Kate Etak",
-  "Brandon Brandonus",
-  "Simon Simonson",
-  "Jane Janesford"
+  'Bill Billiamson',
+  'Kate Etak',
+  'Brandon Brandonus',
+  'Simon Simonson',
+  'Jane Janesford'
 ];
 const voter_signatures3 = [
-  "Bill Billiamson",
-  "Kate Etak",
-  "Brandon Brandonus",
-  "Simon Simonson",
-  "Jane Janesford"
+  'Bill Billiamson',
+  'Kate Etak',
+  'Brandon Brandonus',
+  'Simon Simonson',
+  'Jane Janesford'
 ];
 
 const voter_ids = [
-  "Bill Billiamson",
-  "Kate Etak",
-  "Brandon Brandonus",
-  "Simon Simonson",
-  "Jane Janesford"
+  'Bill Billiamson',
+  'Kate Etak',
+  'Brandon Brandonus',
+  'Simon Simonson',
+  'Jane Janesford'
 ];
 const voter_ids2 = [
-  "Bill Billiamson",
-  "Kate Etak",
-  "Brandon Brandonus",
-  "Simon Simonson",
-  "Jane Janesford"
+  'Bill Billiamson',
+  'Kate Etak',
+  'Brandon Brandonus',
+  'Simon Simonson',
+  'Jane Janesford'
 ];
 const voter_id3 = [
-  "Bill Billiamson",
-  "Kate Etak",
-  "Simon Simonson",
-  "Brandon Brandonus"
+  'Bill Billiamson',
+  'Kate Etak',
+  'Simon Simonson',
+  'Brandon Brandonus'
 ];
 
 // Day #7
 const interviews = [
-  "smart city",
-  "rebuild the lighthouse",
-  "arts funding",
-  "transportation",
-  "arts funding",
-  "rebuild the lighthouse",
-  "sports funding",
-  "tax cuts",
-  "smart city",
-  "arts funding",
-  "smart city"
+  'smart city',
+  'rebuild the lighthouse',
+  'arts funding',
+  'transportation',
+  'arts funding',
+  'rebuild the lighthouse',
+  'sports funding',
+  'tax cuts',
+  'smart city',
+  'arts funding',
+  'smart city'
 ];
 
 // Day 8
-const trash = "recycling";
-const trash2 = "waste";
-const trash3 = "compost";
+const trash = 'recycling';
+const trash2 = 'waste';
+const trash3 = 'compost';
 
 const bins = { waste: 4, recycling: 2, compost: 5 };
 const bins2 = { waste: 2, recycling: 4, compost: 10 };
@@ -258,15 +266,15 @@ const speed = 38;
 const spots = [
   //COLUMNS ARE X
   //0    1    2    3    4    5
-  ["s", "s", "s", "S", "R", "M"], // 0 ROWS ARE Y
-  ["s", "M", "s", "S", "R", "M"], // 1
-  ["s", "M", "s", "S", "R", "m"], // 2
-  ["S", "r", "s", "m", "R", "M"], // 3
-  ["S", "r", "s", "m", "R", "M"], // 4
-  ["S", "r", "S", "M", "M", "S"] //  5
+  ['s', 's', 's', 'S', 'R', 'M'], // 0 ROWS ARE Y
+  ['s', 'M', 's', 'S', 'R', 'M'], // 1
+  ['s', 'M', 's', 'S', 'R', 'm'], // 2
+  ['S', 'r', 's', 'm', 'R', 'M'], // 3
+  ['S', 'r', 's', 'm', 'R', 'M'], // 4
+  ['S', 'r', 'S', 'M', 'M', 'S'] //  5
 ];
 
-const vehicle = "regular"; // possible options are 'regular', 'small', or 'motorcycle'
+const vehicle = 'regular'; // possible options are 'regular', 'small', or 'motorcycle'
 
 // Day 11
 const buses = {
@@ -282,37 +290,49 @@ const buses = {
 
 // Day 12
 const samples = [
-  "clean",
-  "clean",
-  "dirty",
-  "clean",
-  "dirty",
-  "clean",
-  "clean",
-  "dirty",
-  "clean",
-  "dirty"
+  'clean',
+  'clean',
+  'dirty',
+  'clean',
+  'dirty',
+  'clean',
+  'clean',
+  'dirty',
+  'clean',
+  'dirty'
 ];
-const samples2 = ["clean", "clean", "clean", "clean", "clean"];
+const samples2 = ['clean', 'clean', 'clean', 'clean', 'clean'];
 const samples3 = [
-  "dirty",
-  "clean",
-  "clean",
-  "dirty",
-  "clean",
-  "clean",
-  "clean"
+  'dirty',
+  'clean',
+  'clean',
+  'dirty',
+  'clean',
+  'clean',
+  'clean'
 ];
-const samples4 = ["dirty", "clean", "dirty", "clean", "clean", "clean"];
+const samples4 = ['dirty', 'clean', 'dirty', 'clean', 'clean', 'clean'];
 
 const threshold = 0.3;
 const threshold2 = 0.5;
 const threshold3 = 0.1;
-const threshold3 = 0.4;
+const threshold4 = 0.4;
 
 // Day 13
-const lights = {"id":1,"on":false},{"id":2,"on":false},{"id":3,"on":false},{"id":4,"on":false},{"id":5,"on":false};
-const lights2 = {"id":1,"on":true},{"id":2,"on":true},{"id":3,"on":true},{"id":4,"on":true},{"id":5,"on":true};
+const lights = [
+  { id: 1, on: false },
+  { id: 2, on: false },
+  { id: 3, on: false },
+  { id: 4, on: false },
+  { id: 5, on: false }
+];
+const lights2 = [
+  { id: 1, on: true },
+  { id: 2, on: true },
+  { id: 3, on: true },
+  { id: 4, on: true },
+  { id: 5, on: true }
+];
 
 const lightsAreOn = true;
 
