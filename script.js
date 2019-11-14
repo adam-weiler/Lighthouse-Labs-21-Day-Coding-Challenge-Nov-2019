@@ -125,6 +125,9 @@ const lightsOn = lights => {
   return lights;
 };
 
+// A better solution:
+// const lightsOn = lights => lights.map(({ id }) => ({ id, on: true }));
+
 // Return an array with all the lights turned off.
 const lightsOff = lights => {
   for (let [i, v] of Object.entries(lights)) {
@@ -136,6 +139,11 @@ const lightsOff = lights => {
 // Return an array that turns lights off or on based on lightsAreOn.
 const toggleLights = (lights, lightsAreOn) => {
   return lightsAreOn ? lightsOff(lights) : lightsOn(lights);
+};
+
+// Day #14:
+const dynamicPricing = (numberOfPeople, distanceTraveled) => {
+  // Code here!
 };
 
 //
@@ -340,6 +348,13 @@ const lights2 = [
 const lightsAreOn = true;
 const lightsAreOn2 = false;
 
+// Day 14
+const numberOfPeople = 15;
+const distanceTraveled = 10;
+
+const numberOfPeople2 = 35;
+const distanceTraveled2 = 5;
+
 //
 //
 // ***Calling functions***:
@@ -399,3 +414,7 @@ lightsOn(lights); // {"id":1,"on":true},{"id":2,"on":true},{"id":3,"on":true},{"
 lightsOff(lights2); // {"id":1,"on":false},{"id":2,"on":false},{"id":3,"on":false},{"id":4,"on":false},{"id":5,"on":false}
 toggleLights(lights, lightsAreOn); // {"id":1,"on":false},{"id":2,"on":false},{"id":3,"on":false},{"id":4,"on":false},{"id":5,"on":false}
 toggleLights(lights2, lightsAreOn2); // {"id":1,"on":false},{"id":2,"on":false},{"id":3,"on":false},{"id":4,"on":false},{"id":5,"on":false}
+
+// Day #14
+dynamicPricing(numberOfPeople, distanceTraveled); // '$3.50'
+dynamicPricing(numberOfPeople2, distanceTraveled2); // '$2.50'
