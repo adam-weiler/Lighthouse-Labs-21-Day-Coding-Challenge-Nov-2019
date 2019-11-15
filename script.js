@@ -152,6 +152,11 @@ const dynamicPricing = (numberOfPeople, distanceTraveled) => {
   return `$${total.toFixed(2)}`;
 };
 
+// Day #15:
+const finalPosition = moves => {
+  // Code here!
+};
+
 //
 //
 // ***Inputs provided***:
@@ -361,6 +366,11 @@ const distanceTraveled = 10;
 const numberOfPeople2 = 35;
 const distanceTraveled2 = 5;
 
+// Day 15
+const moves = ['north', 'north', 'west', 'west', 'north', 'east', 'north'];
+const moves2 = ['west', 'west', 'west', 'east', 'east', 'east', 'west', 'east'];
+const moves3 = ['north', 'north', 'north', 'north', 'north', 'north', 'south'];
+
 //
 //
 // ***Calling functions***:
@@ -424,3 +434,8 @@ toggleLights(lights2, lightsAreOn2); // {"id":1,"on":false},{"id":2,"on":false},
 // Day #14
 dynamicPricing(numberOfPeople, distanceTraveled); // '$3.50'
 dynamicPricing(numberOfPeople2, distanceTraveled2); // '$2.50'
+
+// Day #15
+finalPosition(moves); // [-1, 4]
+finalPosition(moves);
+finalPosition(moves);
