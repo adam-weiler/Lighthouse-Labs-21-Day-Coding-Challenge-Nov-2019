@@ -154,7 +154,13 @@ const dynamicPricing = (numberOfPeople, distanceTraveled) => {
 
 // Day #15:
 const finalPosition = moves => {
-  // Code here!
+  const x =
+    moves.filter(v => v === 'east').length -
+    moves.filter(v => v === 'west').length;
+  const y =
+    moves.filter(v => v === 'north').length -
+    moves.filter(v => v === 'south').length;
+  return [x, y];
 };
 
 //
@@ -437,5 +443,5 @@ dynamicPricing(numberOfPeople2, distanceTraveled2); // '$2.50'
 
 // Day #15
 finalPosition(moves); // [-1, 4]
-finalPosition(moves);
-finalPosition(moves);
+finalPosition(moves); // [0, 0]
+finalPosition(moves); // [0, 5]
