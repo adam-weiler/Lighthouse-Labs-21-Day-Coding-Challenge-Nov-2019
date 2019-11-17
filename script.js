@@ -165,7 +165,9 @@ const finalPosition = moves => {
 
 // Day #16:
 const festivalColours = color1 => {
-  // code here!
+  const color2 = (color1 + 150) % 360;
+  const color3 = (color1 + 210) % 360;
+  return [color2, color3];
 };
 
 //
