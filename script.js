@@ -163,6 +163,11 @@ const finalPosition = moves => {
   return [x, y];
 };
 
+// Day #16:
+const festivalColours = color1 => {
+  // code here!
+};
+
 //
 //
 // ***Inputs provided***:
@@ -377,6 +382,9 @@ const moves = ['north', 'north', 'west', 'west', 'north', 'east', 'north'];
 const moves2 = ['west', 'west', 'west', 'east', 'east', 'east', 'west', 'east'];
 const moves3 = ['north', 'north', 'north', 'north', 'north', 'north', 'south'];
 
+// Day 16
+const color1 = 100;
+
 //
 //
 // ***Calling functions***:
@@ -445,3 +453,6 @@ dynamicPricing(numberOfPeople2, distanceTraveled2); // '$2.50'
 finalPosition(moves); // [-1, 4]
 finalPosition(moves); // [0, 0]
 finalPosition(moves); // [0, 5]
+
+// Day #16
+festivalColours(color1); // [250, 310]
