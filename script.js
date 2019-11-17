@@ -172,7 +172,10 @@ const festivalColours = color1 => {
 
 // Day #17:
 const judgeVegetable = (vegetables, metric) => {
-  // Code here!
+  const max = vegetables.reduce((prev, current) => {
+    return prev.redness > current.redness ? prev : current;
+  });
+  return max.submitter;
 };
 
 //
