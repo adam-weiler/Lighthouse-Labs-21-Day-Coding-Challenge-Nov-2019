@@ -170,6 +170,11 @@ const festivalColours = color1 => {
   return [color2, color3];
 };
 
+// Day #17:
+const judgeVegetable = (vegetables, metric) => {
+  // Code here!
+};
+
 //
 //
 // ***Inputs provided***:
@@ -387,6 +392,33 @@ const moves3 = ['north', 'north', 'north', 'north', 'north', 'north', 'south'];
 // Day 16
 const color1 = 100;
 
+// Day 17
+const vegetables = [
+  {
+    submitter: 'Old Man Franklin',
+    redness: 10,
+    plumpness: 5
+  },
+  {
+    submitter: 'Sally Tomato-Grower',
+    redness: 2,
+    plumpness: 8
+  },
+  {
+    submitter: 'Hamid Hamidson',
+    redness: 4,
+    plumpness: 3
+  }
+];
+const vegetables2 = [
+  { submitter: 'A', d: 5 },
+  { submitter: 'B', d: 10 },
+  { submitter: 'C', d: 25 }
+];
+
+const metric = 'redness';
+const metric2 = 'd';
+
 //
 //
 // ***Calling functions***:
@@ -458,3 +490,7 @@ finalPosition(moves); // [0, 5]
 
 // Day #16
 festivalColours(color1); // [250, 310]
+
+// Day #17
+judgeVegetable(vegetables, metric);
+judgeVegetable(vegetables2, metric2);
