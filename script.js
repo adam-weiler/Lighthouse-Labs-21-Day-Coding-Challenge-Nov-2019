@@ -226,9 +226,9 @@ const pumpkinSpice = money => {
 
 // Day #20:
 // Use the value below whenever you need the value of Pi
-const PI = 3.14159;
-
-const sphereVolume = function(radius) {};
+const sphereVolume = function(radius) {
+  return (4 / 3) * Math.PI * Math.pow(radius, 3);
+};
 
 const coneVolume = function(radius, height) {};
 
@@ -504,6 +504,10 @@ const sphere2 = {
   type: 'sphere',
   radius: 3
 };
+const sphere3 = {
+  type: 'sphere',
+  radius: 4
+};
 const largeSphere = {
   type: 'sphere',
   radius: 40
@@ -523,6 +527,11 @@ const cone2 = {
   radius: 2,
   height: 6
 };
+const cone3 = {
+  type: 'cone',
+  radius: 6,
+  height: 6
+};
 
 const prism1 = {
   type: 'prism',
@@ -534,6 +543,12 @@ const prism2 = {
   type: 'prism',
   height: 4,
   width: 4,
+  depth: 4
+};
+const prism3 = {
+  type: 'prism',
+  height: 7,
+  width: 2,
   depth: 4
 };
 
