@@ -230,7 +230,9 @@ const sphereVolume = function(radius) {
   return (4 / 3) * Math.PI * Math.pow(radius, 3);
 };
 
-const coneVolume = function(radius, height) {};
+const coneVolume = function(radius, height) {
+  return (Math.PI * Math.pow(radius, 2) * height) / 3;
+};
 
 const prismVolume = function(height, width, depth) {};
 
