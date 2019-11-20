@@ -178,6 +178,15 @@ const judgeVegetable = (vegetables, metric) => {
   return max.submitter;
 };
 
+// Day #18:
+const countTickets = tickets => {
+  // Code here!
+};
+
+const bestOdds = (tickets, raffleEntries) => {
+  // Code here!
+};
+
 //
 //
 // ***Inputs provided***:
@@ -422,6 +431,24 @@ const vegetables2 = [
 const metric = 'redness';
 const metric2 = 'd';
 
+// Day 18
+const tickets1 = ['red', 'red', 'green', 'blue', 'green'];
+const tickets2 = ['red', 'red', 'red', 'blue', 'red'];
+const tickets3 = ['green', 'red', 'green', 'blue', 'green'];
+const tickets4 = ['green', 'red', 'green', 'blue'];
+const tickets5 = ['red', 'red', 'green', 'green'];
+
+const raffleEntries1 = {
+  red: 10,
+  green: 30,
+  blue: 15
+};
+const raffleEntries2 = {
+  red: 1000,
+  green: 30,
+  blue: 6
+};
+
 //
 //
 // ***Calling functions***:
@@ -497,3 +524,6 @@ festivalColours(color1); // [250, 310]
 // Day #17
 judgeVegetable(vegetables, metric);
 judgeVegetable(vegetables2, metric2);
+
+// Day #18
+bestOdds(tickets1, rafleEntries1);
