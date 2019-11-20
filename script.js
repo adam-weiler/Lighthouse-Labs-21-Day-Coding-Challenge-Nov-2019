@@ -180,7 +180,11 @@ const judgeVegetable = (vegetables, metric) => {
 
 // Day #18:
 const countTickets = tickets => {
-  // Code here!
+  return {
+    red: tickets.filter(t => t === 'red').length,
+    green: tickets.filter(t => t === 'green').length,
+    blue: tickets.filter(t => t === 'blue').length
+  };
 };
 
 const bestOdds = (tickets, raffleEntries) => {
@@ -433,21 +437,12 @@ const metric2 = 'd';
 
 // Day 18
 const tickets1 = ['red', 'red', 'green', 'blue', 'green'];
-const tickets2 = ['red', 'red', 'red', 'blue', 'red'];
-const tickets3 = ['green', 'red', 'green', 'blue', 'green'];
-const tickets4 = ['green', 'red', 'green', 'blue'];
-const tickets5 = ['red', 'red', 'green', 'green'];
+const tickets2 = ['green', 'green', 'green', 'blue', 'green'];
+const tickets3 = ['red', 'blue', 'green', 'blue', 'green'];
 
-const raffleEntries1 = {
-  red: 10,
-  green: 30,
-  blue: 15
-};
-const raffleEntries2 = {
-  red: 1000,
-  green: 30,
-  blue: 6
-};
+const raffleEntries1 = { red: 10, green: 30, blue: 15 };
+const raffleEntries2 = { red: 10, green: 4, blue: 15 };
+const raffleEntries3 = { red: 100, green: 24, blue: 5 };
 
 //
 //
@@ -526,4 +521,6 @@ judgeVegetable(vegetables, metric);
 judgeVegetable(vegetables2, metric2);
 
 // Day #18
-bestOdds(tickets1, rafleEntries1);
+bestOdds(tickets1, rafleEntries1); // `You have the best odds of winning the red raffle.`
+bestOdds(tickets2, rafleEntries2); // `You have the best odds of winning the green raffle.`
+bestOdds(tickets3, rafleEntries3); // `You have the best odds of winning the blue raffle.`
