@@ -204,7 +204,25 @@ const bestOdds = (tickets, raffleEntries) => {
 };
 
 // Day #19:
-const pumpkinSpice = money => {};
+const pumpkinSpice = money => {
+  const order = [];
+  const pie = { cost: 5, spice: 30 };
+  const latte = { cost: 3, spice: 15 };
+  const macaron = { cost: 1, spice: 3 };
+
+  order[0] = Math.floor(money / pie.cost);
+
+  order[1] = Math.floor((money - order[0] * pie.cost) / latte.cost);
+
+  order[2] = Math.floor(
+    (money - order[0] * pie.cost - order[1] * latte.cost) / macaron.cost
+  );
+
+  order[3] =
+    order[0] * pie.spice + order[1] * latte.spice + order[2] * macaron.spice;
+
+  return order;
+};
 
 //
 //
@@ -315,7 +333,7 @@ const interviews = [
   'smart city'
 ];
 
-// Day 8
+// Day #8
 const trash = 'recycling';
 const trash2 = 'waste';
 const trash3 = 'compost';
@@ -324,7 +342,7 @@ const bins = { waste: 4, recycling: 2, compost: 5 };
 const bins2 = { waste: 2, recycling: 4, compost: 10 };
 const bins3 = { waste: 2, recycling: 2, compost: 3 };
 
-// Day 9
+// Day #9
 const cars = [
   { time: 1568329654807, speed: 40 },
   { time: 1568329821632, speed: 42 },
@@ -333,7 +351,7 @@ const cars = [
 
 const speed = 38;
 
-// Day 10
+// Day #10
 const spots = [
   //COLUMNS ARE X
   //0    1    2    3    4    5
@@ -347,7 +365,7 @@ const spots = [
 
 const vehicle = 'regular'; // possible options are 'regular', 'small', or 'motorcycle'
 
-// Day 11
+// Day #11
 const buses = {
   pickadilly: {
     distance: 10,
@@ -359,7 +377,7 @@ const buses = {
   }
 };
 
-// Day 12
+// Day #12
 const samples = [
   'clean',
   'clean',
@@ -389,7 +407,7 @@ const threshold2 = 0.5;
 const threshold3 = 0.1;
 const threshold4 = 0.4;
 
-// Day 13
+// Day #13
 const lights = [
   { id: 1, on: false },
   { id: 2, on: false },
@@ -408,22 +426,22 @@ const lights2 = [
 const lightsAreOn = true;
 const lightsAreOn2 = false;
 
-// Day 14
+// Day #14
 const numberOfPeople = 15;
 const distanceTraveled = 10;
 
 const numberOfPeople2 = 35;
 const distanceTraveled2 = 5;
 
-// Day 15
+// Day #15
 const moves = ['north', 'north', 'west', 'west', 'north', 'east', 'north'];
 const moves2 = ['west', 'west', 'west', 'east', 'east', 'east', 'west', 'east'];
 const moves3 = ['north', 'north', 'north', 'north', 'north', 'north', 'south'];
 
-// Day 16
+// Day #16
 const color1 = 100;
 
-// Day 17
+// Day #17
 const vegetables = [
   {
     submitter: 'Old Man Franklin',
@@ -450,7 +468,7 @@ const vegetables2 = [
 const metric = 'redness';
 const metric2 = 'd';
 
-// Day 18
+// Day #18
 const tickets1 = ['red', 'red', 'green', 'blue', 'green'];
 const tickets2 = ['green', 'green', 'green', 'blue', 'green'];
 const tickets3 = ['red', 'blue', 'green', 'blue', 'green'];
@@ -459,7 +477,7 @@ const raffleEntries1 = { red: 10, green: 30, blue: 15 };
 const raffleEntries2 = { red: 10, green: 4, blue: 15 };
 const raffleEntries3 = { red: 100, green: 24, blue: 5 };
 
-// Day 19
+// Day #19
 const money1 = 9;
 const money2 = 22;
 
@@ -545,5 +563,5 @@ bestOdds(tickets2, rafleEntries2); // `You have the best odds of winning the gre
 bestOdds(tickets3, rafleEntries3); // `You have the best odds of winning the blue raffle.`
 
 // Day #19
-pumpkinSpice(money1);
-pumpkinSpice(money2);
+pumpkinSpice(money1); // [1, 1, 1, 48]
+pumpkinSpice(money2); // [4, 0, 2, 126]
