@@ -224,6 +224,20 @@ const pumpkinSpice = money => {
   return order;
 };
 
+// Day #20:
+// Use the value below whenever you need the value of Pi
+const PI = 3.14159;
+
+const sphereVolume = function(radius) {};
+
+const coneVolume = function(radius, height) {};
+
+const prismVolume = function(height, width, depth) {};
+
+const totalVolume = function(solids) {
+  console.log('solids', solids);
+};
+
 //
 //
 // ***Inputs provided***:
@@ -481,6 +495,50 @@ const raffleEntries3 = { red: 100, green: 24, blue: 5 };
 const money1 = 9;
 const money2 = 22;
 
+// Day #20
+const sphere1 = {
+  type: 'sphere',
+  radius: 2
+};
+const sphere2 = {
+  type: 'sphere',
+  radius: 3
+};
+const largeSphere = {
+  type: 'sphere',
+  radius: 40
+};
+const smallSphere = {
+  type: 'sphere',
+  radius: 10
+};
+
+const cone1 = {
+  type: 'cone',
+  radius: 3,
+  height: 5
+};
+const cone2 = {
+  type: 'cone',
+  radius: 2,
+  height: 6
+};
+
+const prism1 = {
+  type: 'prism',
+  height: 3,
+  width: 4,
+  depth: 5
+};
+const prism2 = {
+  type: 'prism',
+  height: 4,
+  width: 4,
+  depth: 4
+};
+
+const duck = [largeSphere, smallSphere, cone1];
+
 //
 //
 // ***Calling functions***:
@@ -565,3 +623,9 @@ bestOdds(tickets3, rafleEntries3); // `You have the best odds of winning the blu
 // Day #19
 pumpkinSpice(money1); // [1, 1, 1, 48]
 pumpkinSpice(money2); // [4, 0, 2, 126]
+
+// Day #20
+sphereVolume(sphere1.radius); // 33.5102
+coneVolume(cone.radius, cone.height); // 47.12385
+prismVolume(prism.height, prism.width, prism.depth); // 60
+totalVolume(duck); // 272318.257
