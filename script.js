@@ -234,7 +234,9 @@ const coneVolume = function(radius, height) {
   return (Math.PI * Math.pow(radius, 2) * height) / 3;
 };
 
-const prismVolume = function(height, width, depth) {};
+const prismVolume = function(height, width, depth) {
+  return height * width * depth;
+};
 
 const totalVolume = function(solids) {
   console.log('solids', solids);
