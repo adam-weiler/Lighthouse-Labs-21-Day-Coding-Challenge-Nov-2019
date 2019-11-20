@@ -203,6 +203,9 @@ const bestOdds = (tickets, raffleEntries) => {
   return `You have the best odds of winning the ${bestBet} raffle.`;
 };
 
+// Day #19:
+const pumpkinSpice = money => {};
+
 //
 //
 // ***Inputs provided***:
@@ -456,6 +459,10 @@ const raffleEntries1 = { red: 10, green: 30, blue: 15 };
 const raffleEntries2 = { red: 10, green: 4, blue: 15 };
 const raffleEntries3 = { red: 100, green: 24, blue: 5 };
 
+// Day 19
+const money1 = 9;
+const money2 = 22;
+
 //
 //
 // ***Calling functions***:
@@ -536,3 +543,7 @@ judgeVegetable(vegetables2, metric2);
 bestOdds(tickets1, rafleEntries1); // `You have the best odds of winning the red raffle.`
 bestOdds(tickets2, rafleEntries2); // `You have the best odds of winning the green raffle.`
 bestOdds(tickets3, rafleEntries3); // `You have the best odds of winning the blue raffle.`
+
+// Day #19
+pumpkinSpice(money1);
+pumpkinSpice(money2);
