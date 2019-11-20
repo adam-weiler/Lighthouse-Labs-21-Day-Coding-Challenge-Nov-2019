@@ -188,7 +188,19 @@ const countTickets = tickets => {
 };
 
 const bestOdds = (tickets, raffleEntries) => {
-  // Code here!
+  let ticketCounts = countTickets(tickets);
+
+  let odds = {
+    red: raffleEntries.red / ticketCounts.red,
+    green: raffleEntries.green / ticketCounts.green,
+    blue: raffleEntries.blue / ticketCounts.blue
+  };
+
+  const bestBet = Object.keys(odds).reduce((a, b) =>
+    odds[a] < odds[b] ? a : b
+  );
+
+  return `You have the best odds of winning the ${bestBet} raffle.`;
 };
 
 //
