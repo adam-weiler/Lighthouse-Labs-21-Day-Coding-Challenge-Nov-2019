@@ -225,7 +225,6 @@ const pumpkinSpice = money => {
 };
 
 // Day #20:
-// Use the value below whenever you need the value of Pi
 const sphereVolume = function(radius) {
   return (4 / 3) * Math.PI * Math.pow(radius, 3);
 };
@@ -239,7 +238,19 @@ const prismVolume = function(height, width, depth) {
 };
 
 const totalVolume = function(solids) {
-  console.log('solids', solids);
+  let volTotal = 0;
+
+  solids.forEach(s => {
+    if (s.type === 'sphere') {
+      volTotal += sphereVolume(s.radius);
+    } else if (s.type === 'cone') {
+      volTotal += coneVolume(s.radius, s.height);
+    } else if (s.type === 'prism') {
+      volTotal += totalVolume(s.height, s.width, s.depth);
+    }
+  });
+
+  return volTotal;
 };
 
 //
@@ -645,6 +656,8 @@ pumpkinSpice(money2); // [4, 0, 2, 126]
 
 // Day #20
 sphereVolume(sphere1.radius); // 33.5102
-coneVolume(cone.radius, cone.height); // 47.12385
+coneVolume(cone1.radius, cone1.height); // 47.12385
 prismVolume(prism.height, prism.width, prism.depth); // 60
-totalVolume(duck); // 272318.257
+totalVolume(duck); // 272318.48720091925
+totalVolume(cone2, prism3); // 146.54866776461628 ?
+totalVolume(prism2, sphere2, cone2); // 202.23007675795088
