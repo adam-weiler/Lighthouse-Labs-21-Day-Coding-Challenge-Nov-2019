@@ -186,3 +186,92 @@ We'll need to start with an **if statement** to determine who the vote is for. O
 For instance, if **name === 'Tim'**, then we want to increment **votes[0]++**.
 
 </details>
+
+#### Challenge #4 - This is How You Remind Me (To Register To Vote)
+
+<details>
+<summary>Backstory</summary>
+  
+Now that you've squashed all the bugs in the city's new voting software, it's time to jump back on the campaign trail. The election is coming up soon! You need to send out reminders to all Codeville citizens to encourage them to vote, but you don't want to spam people who have already registered. Use JavaScript to remove all registered voters from your contact list.
+
+</details>
+
+<details>
+<summary>Instructions</summary>
+  
+Complete the function **registerToVote(name, unregisteredVoters)** that takes in the name of a newly registered voter and an array of names of those who have not yet registered to vote. Your function must return an array, with the newly registered voter's name removed.
+
+</details>
+
+<details>
+  <summary>Examples</summary>
+
+##### Input
+
+    const name = 'Bradley';
+    const unregisteredVoters = ['Jake', 'Alanna', 'Bradley', 'Stephanie'];
+
+##### Output
+
+    ['Jake', 'Alanna', 'Stephanie']
+
+</details>
+
+<details>
+<summary>Hint</summary>
+
+If we initialize a new empty array within our function, **let mailingList = []**, we can use a
+[for-loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration#for...of_statement) and an [if-statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) to [push](https://www.w3schools.com/jsref/jsref_push.asp) the right names into it.
+
+Or if we're feeling adventurous, let's take a look at JavaScript's [filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) function. You can see an example of how to remove an item from an array using filter [here](https://stackoverflow.com/a/20690490).
+
+</details>
+
+#### Challenge #5 - Voting Station Calculation
+
+<details>
+<summary>Backstory</summary>
+  
+The election is looming, and the dutiful City of Codeville staff has finalized most of the details, except for one thing: where will citizens vote? There are hundreds of buildings in town, but there are very specific requirements for what constitutes an acceptable voting station. With very little time to decide, the city needs our help to sort through the building data.
+
+</details>
+
+<details>
+<summary>Instructions</summary>
+  
+ Complete the function **chooseStations(stations)** that takes in an array of possible voting stations, and then only returns the names of the stations that are appropriate.
+
+Your function will receive an array of stations, where each station itself is an array with a name, a capacity, and a venue type.
+
+In order for a station to be deemed appropriate, it must have a **capacity of at least 20**, and be a **school** or **community centre**.
+
+</details>
+
+<details>
+  <summary>Examples</summary>
+
+##### Input
+
+    const stations = [
+      ['Big Bear Donair', 10, 'restaurant'],
+      ['Bright Lights Elementary', 50, 'school'],
+      ['Moose Mountain Community Centre', 45, 'community centre']
+    ];
+
+##### Output
+
+    ['Bright Lights Elementary', 'Moose Mountain Community Centre']
+
+</details>
+
+<details>
+<summary>Hint</summary>
+
+You'll need to try out some new [comparison operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Comparison) for this. Take a look at how to do greater-than, not-equal, and logical-AND with JavaScript.
+
+Much like the previous challenge, one way we could solve this is by initializing a new array within our function (**let goodStations = []**) and [push](https://www.w3schools.com/jsref/jsref_push.asp) the stations that meet the requirements to it as we loop through them.
+
+See two of the Lighthouse Labs team pair program this challenge below:
+[The Road to Codeville: Breaking Down Challenge 5 of the 21-Day Coding Challenge (Nov 2019)](https://www.youtube.com/watch?v=16UXovpvyf8)
+
+</details>
