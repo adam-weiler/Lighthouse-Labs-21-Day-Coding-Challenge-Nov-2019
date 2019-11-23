@@ -407,3 +407,123 @@ Similar to yesterday's question, we may need a for-loop to go through each entry
 Whenever we need to decide which value to increase, we could use an if-statement or switch statement to make that decision.
 
 </details>
+
+#### Challenge #8 - Trash to Treasure
+
+<details>
+<summary>Backstory</summary>
+  
+The results are in, and the people of Codeville want you to focus on Smart City upgrades. You've decided to begin by replacing all of the city's trash cans with smart cans: when citizens toss their rubbish into the smart can, it automatically sorts items into waste, recycling, and compost bins.
+
+</details>
+
+<details>
+<summary>Instructions</summary>
+  
+We need to complete a function called **smartGarbage(trash, bins)**, which will be responsible for increasing the garbage count for waste, recycling, or compost depending on what trash is submitted. Our function will receive two arguments. The first argument, **trash**, is a string that will tell our function what type of item is being submitted. The second argument, **bins**, is an object containing three properties (waste, recycling, and compost), which hold some numerical value. Our function must increase the correct value in the **bins** object, and the return the newly updated object.
+
+</details>
+
+<details>
+  <summary>Examples</summary>
+
+##### Input
+
+    const bins = {
+        waste: 4,
+        recycling: 2,
+        compost: 5
+    }
+
+    const trash = 'recycling'
+
+##### Output
+
+    {
+      waste: 4,
+        recycling: 3,
+        compost: 5
+    }
+
+</details>
+
+<details>
+<summary>Hint</summary>
+
+This is the first time we've encountered objects! We will need to access the proper value in the bins object using the **trash** as the key. If you're having trouble with this, take a look online to see how to use [square bracket notation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_accessors) to access values in a JavaScript object.
+
+Note: When we’re referencing a variable in the bracket notation, we can skip the quotes.
+
+</details>
+
+#### Challenge #9 - Driving Mayor Daisy
+
+<details>
+<summary>Backstory</summary>
+  
+As Mayor, you want one of your legacies to be bettering street design enough to improve traffic flow and reduce congestion. You've decided to start by installing special sensors on some streets to monitor how often cars pass by, and track their speeds.
+
+</details>
+
+<details>
+<summary>Instructions</summary>
+  
+ Complete the function, **carPassing(cars, speed)**, that takes in an array of car objects, and the speed of a car as it passes the sensor. This function should create a new object with with a property called speed, and another property called time and add it to the cars array. We can retrieve the current time, for setting the **time** property, by using the **Date.now()** function, which is built into JavaScript!
+
+Our function should return an array that includes all of the elements in **cars** as well as our new element.
+
+</details>
+
+<details>
+  <summary>Examples</summary>
+
+##### Input
+
+    const cars = [
+      {
+        time: 1568329654807,
+        speed: 40,
+      },
+      {
+        time: 1568329821632,
+        speed: 42,
+      },
+      {
+        time: 1568331115463,
+        speed: 35
+      }
+    ]
+
+    const speed = 38
+
+##### Output
+
+    [
+      {
+        time: 1568329654807,
+        speed: 40,
+      },
+      {
+        time: 1568329821632,
+        speed: 42,
+      },
+      {
+        time: 1568331115463,
+        speed: 35
+      },
+      {
+        time: 1568431216417,
+        speed: 38
+      }
+    ]
+
+</details>
+
+<details>
+<summary>Hint</summary>
+
+We can define and create a new object with an object literal. You can check out the first list item [here](https://www.freecodecamp.org/news/a-complete-guide-to-creating-objects-in-javascript-b0e2450655e8/) as an example.
+
+Like in previous challenges, we may need to use JavaScript's handy **push()** method to add our new object to the cars array.
+
+</details>
