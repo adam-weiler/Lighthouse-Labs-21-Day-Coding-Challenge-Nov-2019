@@ -253,6 +253,11 @@ const totalVolume = function(solids) {
   return volTotal;
 };
 
+// Day #21:
+const chooseRecipe = function(bakeryA, bakeryB, recipes) {
+  // Code here!
+};
+
 //
 //
 // ***Inputs provided***:
@@ -569,6 +574,32 @@ const prism3 = {
 
 const duck = [largeSphere, smallSphere, cone1];
 
+// Day 21:
+const bakeryA = ['saffron', 'eggs', 'tomato paste', 'coconut', 'custard'];
+const bakeryB = ['milk', 'butter', 'cream cheese'];
+const recipes1 = [
+  {
+    name: 'Coconut Sponge Cake',
+    ingredients: ['coconut', 'cake base']
+  },
+  {
+    name: 'Persian Cheesecake',
+    ingredients: ['saffron', 'cream cheese']
+  },
+  {
+    name: 'Custard Surprise',
+    ingredients: ['custard', 'ground beef']
+  }
+];
+
+const bakeryC = ['a', 'b', 'c'];
+const bakeryD = ['d', 'e', 'f'];
+const recipes2 = [
+  { name: 'A', ingredients: ['a', 'g'] },
+  { name: 'B', ingredients: ['f', 'j'] },
+  { name: 'C', ingredients: ['e', 'b'] }
+];
+
 //
 //
 // ***Calling functions***:
@@ -661,3 +692,7 @@ prismVolume(prism.height, prism.width, prism.depth); // 60
 totalVolume(duck); // 272318.48720091925
 totalVolume(cone2, prism3); // 146.54866776461628 ?
 totalVolume(prism2, sphere2, cone2); // 202.23007675795088
+
+// Day #21
+chooseRecipe(bakeryA, bakeryB, recipes1);
+chooseRecipe(bakeryC, bakeryD, recipes2);
