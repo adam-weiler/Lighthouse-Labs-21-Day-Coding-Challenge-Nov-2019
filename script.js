@@ -3,7 +3,7 @@
 const doorToDoor = (volunteers, neighbourhoods) =>
   neighbourhoods.length / volunteers.length;
 
-// Day 2: Return the appropriate response based on the topic asked.
+// Day #2: Return the appropriate response based on the topic asked.
 const interviewAnswer = topic => {
   switch (topic) {
     case 'arts funding': {
@@ -254,8 +254,12 @@ const totalVolume = function(solids) {
 };
 
 // Day #21:
-const chooseRecipe = function(bakeryA, bakeryB, recipes) {
-  // Code here!
+const chooseRecipe = (bakeryA, bakeryB, recipes) => {
+  return recipes.find(recipe => {
+    return recipe.ingredients.every(ingredient => {
+      return bakeryA.concat(bakeryB).includes(ingredient);
+    });
+  }).name;
 };
 
 //
