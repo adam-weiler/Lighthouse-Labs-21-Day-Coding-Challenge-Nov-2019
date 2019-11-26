@@ -586,3 +586,92 @@ See two of the Lighthouse Labs team pair program this challenge below:
 ](https://youtu.be/PU4xyyg2uGA)
 
 </details>
+
+#### Challenge #11 - You Can't Hurry Transit
+
+<details>
+<summary>Backstory</summary>
+  
+You can't hurry love, or local transit in Codeville. While you've been hard at work on a solution to the larger transit woes, you've decided to implement a new system to at least be a little more transparent about wait times. The city will be installing a smart screen, at the busiest bus stop in town, that will show the estimated arrival times for each of the buses that stop there.
+
+</details>
+
+<details>
+<summary>Instructions</summary>
+  
+For this challenge, we'll implement a function called **busTimes()**. This function will calculate the arrival time for a collection of busses based on their current speed and distance from the stop. It will receive an object called **buses**, which contains a series of objects for each bus, with the distance of the bus and the speed that the bus is traveling at. Our function should return a **new** object that shows how long until each bus arrives at the stop.
+
+</details>
+
+<details>
+  <summary>Examples</summary>
+
+##### Input
+
+    const buses = {
+      pickadilly: {
+          distance: 10,
+          speed: 5
+      },
+      uptown: {
+          distance: 13,
+          speed: 10
+      }
+    }
+
+##### Output
+
+    {
+      pickadilly: 2,
+      uptown: 1.3
+    }
+
+</details>
+
+<details>
+<summary>Hint</summary>
+
+We'll need to loop through each of the buses in the **buses** object. Looping through objects can be done with a [for...in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in) loop!
+
+We can calculate the arrival time of the bus by dividing it's distance by it's speed.
+
+</details>
+
+#### Challenge #12 - In the Air Tonight
+
+<details>
+<summary>Backstory</summary>
+  
+The citizens of Codeville seem pleased with all the upgrades you're making to the local infrastructure. Next on your list to tackle is the air quality. You've decided that you want to install air pollution sensors around the city to monitor air quality and identify problem areas. We need to write the code for the sensors to trigger a special message when the air is too polluted.
+
+</details>
+
+<details>
+<summary>Instructions</summary>
+  
+For this challenge we will implement a function called **checkAir()**, which will check a collection of air samples. The function will take in two arguments. The first argument is an array of strings, where each string represents a small air sample that is either **clean** or **dirty**. The second argument is a number representing the highest acceptable amount of dirty samples. For example, a threshold of 0.4 means that there must be less than 40% of total samples classified as dirty for our air to be considered clean. Our function must return **Polluted** if there are too many dirty air samples, or **Clean** if the proportion of dirty samples is below the threshold.
+
+</details>
+
+<details>
+  <summary>Examples</summary>
+
+##### Input
+
+    const samples = ['clean', 'clean', 'dirty', 'clean', 'dirty', 'clean', 'clean', 'dirty', 'clean', 'dirty']
+    const threshold = 0.3
+
+##### Output
+
+    Polluted
+
+</details>
+
+<details>
+<summary>Hint</summary>
+
+Not sure where to get started? It might be useful to start by creating a variable to keep track of how many dirty samples we find as we loop through the array of samples. We can increment or add to this number using the **++** operator.
+
+Once you know how many dirty samples there are, we just need to do some simple math to determine if it exceeds the threshold.
+
+</details>
